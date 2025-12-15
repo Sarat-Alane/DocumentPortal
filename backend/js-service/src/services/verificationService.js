@@ -5,7 +5,7 @@
 const path = require("path");
 const axios = require("axios");
 
-const tokenKey = "96fd4c397e26a71d19027cfcd548488c"; // Convert the Token Key into an environment Variable and store it in .env file
+const tokenKey = "REPLACE_API_TOKEN_KEY_HERE"; // Convert the Token Key into an environment Variable and store it in .env file
 
 const formatDate = (dateString) => {
   const d = new Date(dateString);
@@ -78,7 +78,7 @@ const aadharVerificaion = async (element) => {
 const panVerificaion = async (element) => {
   try {
     const myHeaders = new Headers();
-    // myHeaders.append("tokenKey", "96fd4c397e26a71d19027cfcd548488c"); // Need to add Token here
+    // myHeaders.append("tokenKey", "REPLACE_API_TOKEN_KEY_HERE"); // Need to add Token here
     myHeaders.append("Content-Type", "application/json");
     element.dob = formatDate(element.dob);
     console.log("Element DoB:", element.dob);
@@ -122,7 +122,7 @@ const panVerificaion = async (element) => {
       raw,
       {
         headers: {
-          tokenKey: "96fd4c397e26a71d19027cfcd548488c",
+          tokenKey: "REPLACE_API_TOKEN_KEY_HERE",
           "Content-Type": "application/json",
         },
       }
