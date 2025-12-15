@@ -1,0 +1,12 @@
+boto3
+botocore
+requests
+flask
+werkzeug
+psycopg2-binary
+paddleocr
+pdf2image
+huggingface_hub
+paddlepaddle
+python-dotenv
+

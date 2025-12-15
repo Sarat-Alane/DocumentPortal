@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">DCP</div>
+            <nav>
+                <ul>
+                    <li class="active">Dealer Claim Form After Sales Flow 1</li>
+                    <li>Dealer Claim Form After Sales Flow 2</li>
+                    <li>Dealer Statements</li>
+                    <li>Temp Dealer Statement New</li>
+                    <li>Sales Outlet</li>
+                </ul>
+            </nav>
+        </aside>
+
+        <div class="dashboard-container">
+            <header>
+                <h1>📄 Document Verification Dashboard</h1>
+            </header>
+
+            <!-- Upload Section -->
+            <section class="upload-section">
+                <form action="/uploadPDF" method="post" enctype="multipart/form-data">
+                    <label for="pdfUpload">Upload PDF:</label>
+                    <input type="file" name="pdf" id="pdfUpload">
+                    <button type="submit" id="uploadBtn">Upload PDF</button>
+                </form>
+            </section>
+
+            <!-- Table Section -->
+            <section class="table-section">
+                <div class="table-container">
+                    <table id="verificationTable">
+                        <thead>
+                            <tr>
+                                <th>Customer ID</th>
+                                <th>Name</th>
+                                <th>DOB</th>
+                                <th>Gender</th>
+                                <th>Address</th>
+                                <th>City</th>
+                                <th>State</th>
+                                <th>Aadhaar Provided</th>
+                                <th>Aadhaar Number</th>
+                                <th>PAN Provided</th>
+                                <th>PAN Number</th>
+                                <th>DL Provided</th>
+                                <th>DL Number</th>
+                                <th>Verification Status</th>
+                                <th>Verification Result</th>
+                                <th>VIN Number</th>
+                                <th>Chassis Number</th>
+                                <th>Engine Number</th>
+                                <th>Customer Verification</th>
+                                <th>Vehicle Verification</th>
+                                <th>Vehicle RC</th>
+                                <th>RC Provided</th>
+                                <th>GSTIN Provided</th>
+                                <th>GSTIN</th>
+                                <th>GST Company</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <% const entries=Array.isArray(customerEntries) ? customerEntries : [customerEntries];
+                                entries.forEach(element=> {
+                                %>
+                                <tr>
+                                    <td>
+                                        <%= element.customer_id %>
+                                    </td>
+                                    <td>
+                                        <%= element.name %>
+                                    </td>
+                                    <td>
+                                        <%= element.dob %>
+                                    </td>
+                                    <td>
+                                        <%= element.gender %>
+                                    </td>
+                                    <td>
+                                        <%= element.address %>
+                                    </td>
+                                    <td>
+                                        <%= element.city %>
+                                    </td>
+                                    <td>
+                                        <%= element.state %>
+                                    </td>
+                                    <td>
+                                        <%= element.aadhaar_provided %>
+                                    </td>
+                                    <td>
+                                        <%= element.aadhaar_number %>
+                                    </td>
+                                    <td>
+                                        <%= element.pan_provided %>
+                                    </td>
+                                    <td>
+                                        <%= element.pan_number %>
+                                    </td>
+                                    <td>
+                                        <%= element.dl_provided %>
+                                    </td>
+                                    <td>
+                                        <%= element.dl_number %>
+                                    </td>
+                                    <td>
+                                        <%= element.verification_status %>
+                                    </td>
+                                    <td>
+                                        <%= element.verification_result %>
+                                    </td>
+                                    <td>
+                                        <%= element.vin_number %>
+                                    </td>
+                                    <td>
+                                        <%= element.chassis_number %>
+                                    </td>
+                                    <td>
+                                        <%= element.engine_number %>
+                                    </td>
+                                    <td>
+                                        <%= element.customer_verification %>
+                                    </td>
+                                    <td>
+                                        <%= element.vehicle_verification %>
+                                    </td>
+                                    <td>
+                                        <%= element.vehicle_rc %>
+                                    </td>
+                                    <td>
+                                        <%= element.rc_provided %>
+                                    </td>
+                                    <td>
+                                        <%= element.gstin_provided %>
+                                    </td>
+                                    <td>
+                                        <%= element.gstin %>
+                                    </td>
+                                    <td>
+                                        <%= element.gst_company %>
+                                    </td>
+                                </tr>
+
+                                <% }); %>
+
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>
